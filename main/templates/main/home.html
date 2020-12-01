@@ -1,0 +1,33 @@
+{% extends 'main/base.html' %}
+
+{% block title %}
+<title>Home</title>
+{% endblock title %}
+
+{% block user %}
+
+<!--!Home needs a play button-->
+{% if logged_in %}
+<!--?Maybe since this is a base template it might have issues using unknown variables-->
+<!--!Make sure not to mix up parameter name and what I am actually passing-->
+<p>Welcome Back</p>
+<p> {{user.name}}</p>
+<a href="/logout">Logout</a>
+
+<!--!Create a play button-->
+    <form method="POST">
+        {% csrf_token %}
+    <p></p>
+    <button type="submit", name="start", value="start", class="btn btn-success">START GAME</button>
+    </form>
+
+{% else %}
+<p>Login</p>
+<a href="/login">here</a>
+
+{% endif %}
+  
+{% endblock user %}
+
+
+

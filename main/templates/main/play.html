@@ -1,0 +1,48 @@
+{% extends "main/base.html" %}
+
+{% load static %}
+
+
+{% block audio %}
+
+<!--!If I am inheriting from a template, make sure to put it in a block or else html won't run-->
+<audio autoplay>
+    <source src="{{media.blue.url}}" type="audio/mpeg">
+    Your browser does not support the audio element.
+</audio>
+
+{% endblock audio %}
+
+{% block game %}
+
+<h1>Colour Game</h1>
+
+
+
+
+<input type="text" id=textbox>
+
+<p id=lblTimer>05</p>
+<p id="lblColour">My name shows here</p>
+
+<ul>
+    <li id="Yellow">Yellow</li>
+    <li id="GreenYellow">GreenYellow</li>
+    <li id="Green">Green</li>
+    <li id="Yellow">Yellow</li>
+    <li id="Yellow">Yellow</li>
+    <li id="Yellow">Yellow</li>
+    <li id="Yellow">Yellow</li>
+    <li id="Yellow">Yellow</li>
+    <li id="Yellow">Yellow</li>
+    <li id="Yellow">Yellow</li>
+    <li id="Yellow">Yellow</li>
+    <li id="Yellow">Yellow</li>
+</ul>
+
+['Yellow', 'GreenYellow', 'Green', 'SkyBlue', 'White', 'Gray', 'Orange', 'Pink', 'Magenta', 'Red', 'Purple', 'Blue', 'Black']
+
+<!--!I am having trouble loading this javascript-->
+<script src="{% static 'js/play.js' %}"></script>
+  
+{% endblock game %}
